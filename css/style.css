@@ -4,6 +4,7 @@ header {
   object-fit: cover;
   height: 25rem;
   align-items: flex-end;
+  background-size: cover;
 }
 * {
   font-family: 'Merriweather', sans-serif;
