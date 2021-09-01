@@ -1,7 +1,8 @@
-$(document).ready(function () {
+
+jQuery(document).ready(function () {
   // Activate Carousel
-  $('.carousel').carousel();
-  $('[data-toggle="tooltip"]').tooltip({ html: true, placement: 'bottom' });
+  jQuery('.carousel').carousel();
+  jQuery('[data-toggle="tooltip"]').tooltip({ html: true, placement: 'bottom' });
 
   /** This section is only needed once per page if manually copying **/
   if (typeof MauticSDKLoaded == 'undefined') {

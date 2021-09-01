@@ -35,7 +35,8 @@
       <small>© 2021 Revista AZMina - Todos os Direitos Reservados</small>
     </footer>
 
-    <script src="<?php bloginfo('template_directory'); ?>/js/jquery.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/dist/js/main.min.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/dist/js/app.min.js"></script>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -55,6 +56,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://cdn.rawgit.com/powerticmkt/mautic-form-masks/508e1c4c/mautic-form-masks.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/js/index.js"></script>
+    
   </body>
 </html>

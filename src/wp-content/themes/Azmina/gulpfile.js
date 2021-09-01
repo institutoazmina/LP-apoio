@@ -9,14 +9,14 @@ const autoprefixer = require("gulp-autoprefixer");
 // Função SASS + minify
 function compilaSASS() {
   return gulp
-    .src("assets/css/scss/*.scss")
+    .src("css/scss/*.scss")
     .pipe(autoprefixer('last 20 versions'))
     .pipe(
       sass({
         outputStyle: "compressed",
       })
     )
-    .pipe(gulp.dest("assets/css/"));
+    .pipe(gulp.dest("assets/dist/css/"));
 }
 // Task SASS
 gulp.task("sass", compilaSASS);
@@ -28,13 +28,13 @@ function libCSS() {
       "node_modules/slick-carousel/slick/slick.css",
       "node_modules/normalize.css/normalize.css"
     ])
-    .pipe(concat("app.min.css"))
+    .pipe(concat("style.min.css"))
     .pipe(
       uglifycss({
         uglyComments: true,
       })
     )
-    .pipe(gulp.dest("assets/css/"));
+    .pipe(gulp.dest("assets/dist/css/"));
 }
 gulp.task("libcss", libCSS);
 
@@ -42,8 +42,7 @@ gulp.task("libcss", libCSS);
 function compilaJS() {
   return gulp
     .src([
-      "assets/js/main/global.js",
-      "assets/js/main/cookie.min.js",
+      "js/index.js",
     ])
     .pipe(concat("main.min.js"))
     .pipe(
@@ -52,7 +51,7 @@ function compilaJS() {
       })
     )
     .pipe(uglify())
-    .pipe(gulp.dest("assets/js/"));
+    .pipe(gulp.dest("assets/dist/js/"));
 }
 // Task compila JS
 gulp.task("js", compilaJS);
@@ -64,14 +63,14 @@ function libs() {
       "node_modules/slick-carousel/slick/slick.min.js",
     ])
     .pipe(concat("app.min.js"))
-    .pipe(gulp.dest("assets/js"));
+    .pipe(gulp.dest("assets/dist/js"));
 }
 gulp.task("libs", libs);
 
 // Função Watch
 function watch() {
   gulp.watch("assets/css/scss/*.scss", compilaSASS);
-  gulp.watch("assets/js/main/*.js", compilaJS);
+  gulp.watch("assets/js/*.js", compilaJS);
 }
 // Taks Watch
 gulp.task("watch", watch);
