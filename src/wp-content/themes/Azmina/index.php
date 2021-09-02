@@ -24,18 +24,8 @@
       <section class="wrapper">
         <div class="row section-2 section-2-1">
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <h2 class="title">Nós somos feministas</h2>
-            <p class="mt-3">
-              Na verdade, acreditamos que todos os veículos de comunicação
-              deveriam ser feministas e tratar mulheres e homens com
-              <b>os mesmos direitos.</b>
-            </p>
-            <p>
-              Com isso em mente, disponibilizamos o conteúdo D’AzMina para
-              <b>todos os públicos</b>, com canais de reportagens abertos para o
-              maior número possível de pessoas. Nossa luta também é
-              <b>contra a desinformação</b>.
-            </p>
+            <h2 class="title"><?php the_field("titulo-nos-somos"); ?></h2>
+            <?php the_field("descricao-nos-somos"); ?>
           </div>
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
             <ul>
