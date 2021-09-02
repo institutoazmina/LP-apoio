@@ -1,3 +1,4 @@
+  <?php /* Template Name: Home */ ?>
   <?php get_header();?>
     <main>
       <section class="wrapper intro">
@@ -657,13 +658,12 @@
       </section>
       <section class="wrapper section-6">
         <h3 class="title">
-          Junte-se à Revista AzMina na defesa<br />
-          dos direitos da mulher.
+          <?php the_field("titulo-junte-se")?>
         </h3>
         <button class="btn mt-3" type="button">
           <a
             target="_blank"
-            href="https://www.catarse.me/azmina?ref=&utm_source=web_27abr_apoiehome"
+            href="<?php the_field("link-junte-se")?>"
             >Apoie agora</a
           >
         </button>

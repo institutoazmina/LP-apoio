@@ -5,27 +5,27 @@
         <div class="row">
           <a
             class="col-3"
-            href="https://www.facebook.com/revistaazmina"
+            href="<?php the_field('link_facebook')?>"
             target="_blank"
           >
             <div class="facebook"></div
           ></a>
           <a
             class="col-3"
-            href="https://twitter.com/revistaazmina"
+            href="<?php the_field('link_twitter')?>"
             target="_blank"
           >
             <div class="twitter"></div></a
           ><a
             class="col-3"
-            href="https://www.instagram.com/revistaazmina/"
+            href="<?php the_field('link_instagram')?>"
             target="_blank"
           >
             <div class="instagram"></div
           ></a>
           <a
             class="col-3"
-            href="https://www.youtube.com/channel/UCoyYnOCs_pr0oaXSitYi35g"
+            href="<?php the_field('link_youtube')?>"
             target="_blank"
           >
             <div class="youtube"></div
