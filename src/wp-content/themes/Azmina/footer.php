@@ -16,13 +16,14 @@
             target="_blank"
           >
             <div class="twitter"></div></a
-          ><a
+          >
+          <a
             class="col-3"
             href="<?php the_field('link_instagram')?>"
             target="_blank"
           >
-            <div class="instagram"></div
-          ></a>
+            <div class="instagram"></div>
+          </a>
           <a
             class="col-3"
             href="<?php the_field('link_youtube')?>"
