@@ -54,15 +54,19 @@
                 <?php the_content();?>
                 <div>
                   <div class="row w-100 button-colab">
-                    <div class="col-12 mensal">Mensal</div>
                     <?php if(get_field("valor-plano-mensal")):?>
-                      <div class="col-12 number">R$ <b><?php the_field("valor-plano-mensal")?></b></div>
+                      <a href="<?php the_field("link-plano-mensal")?>" target="_blank" rel="noopener noreferrer">
+                         <div class="col-12 mensal">Mensal</div>
+                         <div class="col-12 number">R$ <b><?php the_field("valor-plano-mensal")?></b></div>
+                      </a>
                     <?php endif;?>
                     </div>
                     <?php if(get_field("valor-plano-anual")):?>
                       <div class="row w-100 button-colab">
-                        <div class="col-12 mensal">Anual</div>
-                        <div class="col-12 number">R$ <b><?php the_field("valor-plano-anual")?></b></div>
+                        <a href="<?php the_field("link-plano-anual")?>" target="_blank" rel="noopener noreferrer">
+                          <div class="col-12 mensal">Anual</div>
+                           <div class="col-12 number">R$ <b><?php the_field("valor-plano-anual")?></b></div>
+                        </a>
                       </div>
                       <?php else:?>
                         <div class="mensal">_________</div>
@@ -148,6 +152,7 @@
         <div class="row only-mobile">
           <?php while ( $query->have_posts() ) : $query->the_post(); ?>
           <div class="col-12 col-md-6 col-lg-6 col-xl-6 p-2">
+          <a href="<?php the_field("link-reportagem")?>" target="_blank" rel="noopener noreferrer">
             <?php 
               $image = get_field('imagem-repostagem');
               if( !empty( $image ) ): ?>
@@ -167,7 +172,8 @@
               <?php the_title(); ?>
             </h3>
             <p class="cultura-name"><?php the_field("author");?></p>
-          </div>
+           </div>
+          </a>
           <?php 
             endwhile;
             wp_reset_postdata(); ?>
