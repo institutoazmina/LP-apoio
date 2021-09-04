@@ -60,7 +60,7 @@ function libs() {
   return gulp
     .src([
       "node_modules/jquery/dist/jquery.min.js",
-      "node_modules/slick-carousel/slick/slick.min.js",
+      "node_modules/slick-carousel/slick/slick.min.js"
     ])
     .pipe(concat("app.min.js"))
     .pipe(gulp.dest("assets/dist/js"));

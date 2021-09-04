@@ -1,5 +1,4 @@
-
-jQuery(document).ready(function () {
+$(document).ready(function() { 
   // Activate Carousel
   jQuery('.carousel').carousel();
   jQuery('[data-toggle="tooltip"]').tooltip({ html: true, placement: 'bottom' });
