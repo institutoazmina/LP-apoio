@@ -55,7 +55,7 @@
                 <div>
                   <div class="row w-100 button-colab">
                     <?php if(get_field("valor-plano-mensal")):?>
-                      <a href="<?php the_field("link-plano-mensal")?>" target="_blank" rel="noopener noreferrer">
+                      <a class="text-decoration-none" href="<?php the_field("link-plano-mensal")?>" target="_blank" rel="noopener noreferrer">
                          <div class="col-12 mensal">Mensal</div>
                          <div class="col-12 number">R$ <b><?php the_field("valor-plano-mensal")?></b></div>
                       </a>
@@ -63,7 +63,7 @@
                     </div>
                     <?php if(get_field("valor-plano-anual")):?>
                       <div class="row w-100 button-colab">
-                        <a href="<?php the_field("link-plano-anual")?>" target="_blank" rel="noopener noreferrer">
+                        <a class="text-decoration-none" href="<?php the_field("link-plano-anual")?>" target="_blank" rel="noopener noreferrer">
                           <div class="col-12 mensal">Anual</div>
                            <div class="col-12 number">R$ <b><?php the_field("valor-plano-anual")?></b></div>
                         </a>
@@ -105,22 +105,24 @@
                     <h3><?php the_title(); ?></h3>
                     <?php the_content();?>
                     <div>
+                    <a class="text-decoration-none" href="<?php the_field("link-plano-mensal")?>" target="_blank" rel="noopener noreferrer">
                       <div class="row w-100 button-colab">
                         <div class="col-12 mensal">Mensal</div>
                         <?php if(get_field("valor-plano-mensal")):?>
                           <div class="col-12 number">R$ <b><?php the_field("valor-plano-mensal")?></b></div>
                         <?php endif;?>
                       </div>
+                    </a>
                       <div class="row w-100 button-colab">
                         <div class="col-12 mensal">Anual</div>
-                        <?php if(get_field("valor-plano-anual")):?>
+                          <?php if(get_field("valor-plano-anual")):?>
                           <div class="row w-100 button-colab">
                             <div class="col-12 mensal">Anual</div>
                             <div class="col-12 number">R$ <b><?php the_field("valor-plano-anual")?></b></div>
                           </div>
                           <?php else:?>
                             <div class="mensal">_________</div>
-                        <?php endif;?>
+                          <?php endif;?>
                       </div>
                     </div>
                   </div>
@@ -152,8 +154,8 @@
         <div class="row only-mobile">
           <?php while ( $query->have_posts() ) : $query->the_post(); ?>
           <div class="col-12 col-md-6 col-lg-6 col-xl-6 p-2">
-          <a href="<?php the_field("link-reportagem")?>" target="_blank" rel="noopener noreferrer">
-            <?php 
+            <a class="text-left" href="<?php the_field("link-reportagem")?>" target="_blank" rel="noopener noreferrer">
+              <?php 
               $image = get_field('imagem-repostagem');
               if( !empty( $image ) ): ?>
                 <img
@@ -162,18 +164,18 @@
                   class="img img-responsive w-100"
                 />
               <?php endif; ?>
-            <p class="cultura mb-0 mt-3">
-              <?php 
-                $term = get_field("categoria");
-                echo esc_html( $term->name ); 
-              ?>
-            </p>
-            <h3 class="text-cultura mt-2">
-              <?php the_title(); ?>
-            </h3>
-            <p class="cultura-name"><?php the_field("author");?></p>
-           </div>
-          </a>
+              <p class="cultura mb-0 mt-3">
+                <?php 
+                  $term = get_field("categoria");
+                  echo esc_html( $term->name ); 
+                ?>
+              </p>
+              <h3 class="text-cultura mt-2">
+                <?php the_title(); ?>
+              </h3>
+              <p class="cultura-name"><?php the_field("author");?></p>
+            </a>
+            </div>
           <?php 
             endwhile;
             wp_reset_postdata(); ?>
