@@ -350,7 +350,7 @@ header {
   }
 
   .cards {
-    a {
+    a:not(.text-decoration-none) {
       text-decoration: underline !important;
     }
 

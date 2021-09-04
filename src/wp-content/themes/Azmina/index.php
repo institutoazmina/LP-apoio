@@ -1,3 +1,4 @@
+  <?php /* Template Name: Home */ ?>
   <?php get_header();?>
     <main>
       <section class="wrapper intro">
@@ -23,537 +24,248 @@
       <section class="wrapper">
         <div class="row section-2 section-2-1">
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <h2 class="title">Nós somos feministas</h2>
-            <p class="mt-3">
-              Na verdade, acreditamos que todos os veículos de comunicação
-              deveriam ser feministas e tratar mulheres e homens com
-              <b>os mesmos direitos.</b>
-            </p>
-            <p>
-              Com isso em mente, disponibilizamos o conteúdo D’AzMina para
-              <b>todos os públicos</b>, com canais de reportagens abertos para o
-              maior número possível de pessoas. Nossa luta também é
-              <b>contra a desinformação</b>.
-            </p>
+            <h2 class="title"><?php the_field("titulo-nos-somos"); ?></h2>
+            <?php the_field("nos-somos-texto-esquerda"); ?>
           </div>
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <ul>
-              <li>Reportagens</li>
-              <li>Elas no Congresso</li>
-              <li>PenhaS</li>
-              <li>MonitorA</li>
-              <li>Campanhas de conscientização</li>
-            </ul>
+            <?php the_field("nos-somos-texto-direita"); ?>
           </div>
         </div>
       </section>
       <section class="wrapper section-3">
         <div class="section-2">
-          <h2>Nós contamos com sua contribuição</h2>
-          <p>
-            O principal <b>benefício</b> em contribuir com o site é acompanhar
-            mais de perto as decisões e caminhos tomados pela equipe editorial,
-            além de garantir que o conteúdo esteja <b>disponível</b> para todas
-            e todos.
-          </p>
-          <h3>
-            Conheça nossas contribuições, seus benefícios... e alguns mimos ;)
-          </h3>
+          <h2><?php the_field("titulo-nos-contamos");?></h2>
+          <?php the_field("descricao-nos-contamos");?>
         </div>
         <div class="cards wrapper only-mobile">
           <div class="row">
-            <div class="col col-12 col-sm-12 col-md-3 col-lg-2 bg-white">
-              <h3>COLAB 1</h3>
-              <p><b>Newsletter</b> mensal com bastidores das reportagens.</p>
-              <hr />
-              <p>Entre no <b>Conselho de Leitores</b> no Facebook.</p>
-              <hr />
-              <p><b>Papo D'AzMina:</b> debates online com convidados.</p>
-              <hr />
-              <b>Balanço Financeiro Anual.</b>
-              <hr />
-              <p><b>Poster Digital</b> + mimos visuais (foto)</p>
-              <img
-                src="<?php bloginfo('template_directory'); ?>/images/desk/poster-digital.png"
-                alt="Uma mulher de costas com um filho nas pendurado nas costas e fundo roxo"
-              />
-              <div>
-                <div class="row w-100 button-colab">
-                  <div class="col-12 mensal">Mensal</div>
-                  <div class="col-12 number">R$ <b>7,99</b></div>
-                </div>
-                <div class="row w-100 button-colab">
-                  <div class="col-12 mensal">Anual</div>
-                  <div class="col-12 number">R$ <b>89,99</b></div>
-                </div>
-              </div>
-            </div>
-            <div class="col col-12 col-sm-12 col-md-3 col-lg-2 bg-white">
-              <h3>COLAB 2</h3>
-              <p><b>Todos</b> os benefícios da <b>Colab 1.</b></p>
-              <hr />
-              <p>Colabore na <b>definição de pautas.</b></p>
-              <hr />
-              <b>Retrospectiva digital anual D'AzMina.</b>
-              <hr />
-              <p><b>Livro digital</b> das parcerias D'AzMina.</p>
-              <hr />
-              <p><b>Imã/Adesivo</b> (foto)</p>
-              <img
-                src="<?php bloginfo('template_directory'); ?>/images/desk/adesivo.png"
-                alt="Adesivo Lugar de mulher é onde ela quiser"
-              />
-              <div>
-                <div class="row w-100 button-colab">
-                  <div class="col-12 mensal">Mensal</div>
-                  <div class="col-12 number">R$ <b>15,99</b></div>
-                </div>
-                <div class="row w-100 button-colab">
-                  <div class="col-12 mensal">Anual</div>
-                  <div class="col-12 number">R$ <b>184,99</b></div>
-                </div>
-              </div>
-            </div>
-            <div class="col col-12 col-sm-12 col-md-3 col-lg-2 bg-white">
-              <h3>COLAB 3</h3>
-              <p><b>Todos</b> os benefícios da <b>Colab 2.</b></p>
-              <hr />
-              <p>Participe de <b>sorteios mensais</b> de brindes.</p>
-              <hr />
-              <p>
-                <b>Desconto</b> em eventos e cursos online de nossas parcerias.
-              </p>
-              <hr />
-              <b>Edição física do livro</b>
-              "<a
-                data-toggle="tooltip"
-                data-placement="bottom"
-                title="
-                  <p>Encarceramento em massa</p>
-                  <p>de Juliana Borges</p>
-                  <p>Um panorama que apresenta a relação entre feminismo 
-                 negro e o encarceramento em massa, questionando um sistema 
-                 prisional que pune prioritariamente a população negra.</p> 
-                 "
-                >Encarceramento em massa</a
-              >",
+          <?php
+            $args = array(  
+              'post_type' => 'tipo-de-contribuicao',
+              'post_status' => 'publish',
+              'order' => 'ASC',
+            );
 
-              <p>de Juliana Borges.</p>
-              <img
-                src="<?php bloginfo('template_directory'); ?>/images/desk/livro-encarceramento-em-massa.png"
-                alt="Livro Encarceramento em Massa de Juliana Borges"
-              />
-              <div>
-                <div class="row w-100 button-colab">
-                  <div class="col-12 mensal">Mensal</div>
-                  <div class="col-12 number">R$ <b>24,99</b></div>
-                </div>
-                <div class="row w-100 button-colab">
-                  <div class="col-12 mensal">Anual</div>
-                  <div class="col-12 number">R$ <b>279,99</b></div>
-                </div>
-              </div>
-            </div>
-            <div class="col col-12 col-sm-12 col-md-3 col-lg-2 bg-white">
-              <h3>COLAB 4</h3>
-              <p><b>Todos</b> os benefícios da <b>Colab 3*.</b></p>
-              <hr />
-              <p>
-                Sessões de 15 minutos de <b>bate-papo online</b> com as mulheres
-                da redação.
-              </p>
-              <hr />
-              <p>
-                <b>Edição físicado livro</b>
-                "<a
-                  data-toggle="tooltip"
-                  data-placement="bottom"
-                  title="
-                  <p>Você já é feminista: abra este livro e descubra o porquê</p>
-                  <p>organizado por Nana Queiroz</p>
-                  <p>Reunião de 23 artigos que vão além da formação básica 
-                    feminista e abordam temas como a cultura da equidade, 
-                    correntes de pensamento e a história do movimento.</p> 
-                 "
-                  >Você já é feminista; abra este livro e descubra o porquê</a
-                >".
-              </p>
-              <img
-                src="<?php bloginfo('template_directory'); ?>/images/desk/livro-voce-ja-e-feminista.png"
-                alt="Livro você já é feminista"
-              />
-              <small class="small-book w-100"
-                >* (exceto o livro “Encarceramento em massa”)</small
-              >
-              <div>
-                <div class="row w-100 button-colab">
-                  <div class="col-12 mensal">Mensal</div>
-                  <div class="col-12 number">R$ <b>35,99</b></div>
-                </div>
-                <div class="row w-100 button-colab">
-                  <div class="col-12 mensal">Anual</div>
-                  <div class="col-12 number">R$ <b>479,99</b></div>
+            $query = new WP_Query( $args );
+            if ( $query->have_posts()) :
+              while ( $query->have_posts() ) : $query->the_post();?>
+              <div class="col col-12 col-sm-12 col-md-3 col-lg-2 bg-white">
+                <h3><?php the_title(); ?></h3>
+                <?php the_content();?>
+                <div>
+                  <div class="row w-100 button-colab">
+                    <?php if(get_field("valor-plano-mensal")):?>
+                      <a class="text-decoration-none" href="<?php the_field("link-plano-mensal")?>" target="_blank" rel="noopener noreferrer">
+                         <div class="col-12 mensal">Mensal</div>
+                         <div class="col-12 number">R$ <b><?php the_field("valor-plano-mensal")?></b></div>
+                      </a>
+                    <?php endif;?>
+                    </div>
+                    <?php if(get_field("valor-plano-anual")):?>
+                      <div class="row w-100 button-colab">
+                        <a class="text-decoration-none" href="<?php the_field("link-plano-anual")?>" target="_blank" rel="noopener noreferrer">
+                          <div class="col-12 mensal">Anual</div>
+                           <div class="col-12 number">R$ <b><?php the_field("valor-plano-anual")?></b></div>
+                        </a>
+                      </div>
+                      <?php else:?>
+                        <div class="mensal">_________</div>
+                    <?php endif;?>
                 </div>
               </div>
-            </div>
-            <div class="col col-12 col-sm-12 col-md-3 col-lg-2 bg-white">
-              <h3>COLAB 5</h3>
-              <p><b>Todos</b> os benefícios da <b>Colab 4.</b></p>
-              <hr />
-              <p>
-                <b>Escolha</b> qual livro físico quer receber. "Encarceramento
-                em massa" ou "Você já é feminista:abra este livro e descubra o
-                porquê".
-              </p>
-              <hr />
-              <p><b>Poster físico</b> feito pelas designers parceiras.</p>
-              <img
-                src="<?php bloginfo('template_directory'); ?>/images/desk/poster-fisico.png"
-                alt="Poster físico feito pelas designer parceiras"
-              />
-              <div>
-                <div class="row w-100 button-colab">
-                  <div class="col-12 mensal">Mensal</div>
-                  <div class="col-12 number">R$ <b>50,00</b> ou <b>+</b></div>
-                </div>
-                <div class="mensal">_________</div>
-              </div>
-            </div>
+            <?php 
+              endwhile;
+              wp_reset_postdata();
+            endif;
+             ?>
           </div>
         </div>
-        <div class="cards wrapper only-desk">
-          <div id="sliderOne" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li
-                data-target="#sliderOne"
-                data-slide-to="0"
-                class="active"
-              ></li>
-              <li data-target="#sliderOne" data-slide-to="1"></li>
-              <li data-target="#sliderOne" data-slide-to="2"></li>
-              <li data-target="#sliderOne" data-slide-to="3"></li>
-              <li data-target="#sliderOne" data-slide-to="4"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="bg-white p-2">
-                  <h3>COLAB 1</h3>
-                  <p>
-                    <b>Newsletter</b> mensal com bastidores das reportagens.
-                  </p>
-                  <hr />
-                  <p>Entre no <b>Conselho de Leitores</b> no Facebook.</p>
-                  <hr />
-                  <p><b>Papo D'AzMina:</b> debates online com convidados.</p>
-                  <hr />
-                  <b>Balanço Financeiro Anual.</b>
-                  <hr />
-                  <p><b>Poster Digital</b> + mimos visuais (foto)</p>
-                  <img
-                    src="<?php bloginfo('template_directory'); ?>/images/desk/poster-digital.png"
-                    alt="Uma mulher de costas com um filho nas pendurado nas costas e fundo roxo"
-                  />
-                  <div>
-                    <div class="row w-100 button-colab">
-                      <div class="col-12 mensal">Mensal</div>
-                      <div class="col-12 number">R$ <b>7,99</b></div>
-                    </div>
-                    <div class="row w-100 button-colab">
-                      <div class="col-12 mensal">Anual</div>
-                      <div class="col-12 number">R$ <b>89,99</b></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="bg-white p-2">
-                  <h3>COLAB 2</h3>
-                  <p><b>Todos</b> os benefícios da <b>Colab 1.</b></p>
-                  <hr />
-                  <p>Colabore na <b>definição de pautas.</b></p>
-                  <hr />
-                  <b>Retrospectiva digital anual D'AzMina.</b>
-                  <hr />
-                  <p><b>Livro digital</b> das parcerias D'AzMina.</p>
-                  <hr />
-                  <p><b>Imã/Adesivo</b> (foto)</p>
-                  <img
-                    src="<?php bloginfo('template_directory'); ?>/images/desk/adesivo.png"
-                    alt="Adesivo Lugar de mulher é onde ela quiser"
-                  />
-                  <div>
-                    <div class="row w-100 button-colab">
-                      <div class="col-12 mensal">Mensal</div>
-                      <div class="col-12 number">R$ <b>15,99</b></div>
-                    </div>
-                    <div class="row w-100 button-colab">
-                      <div class="col-12 mensal">Anual</div>
-                      <div class="col-12 number">R$ <b>184,99</b></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="bg-white p-2">
-                  <h3>COLAB 3</h3>
-                  <p><b>Todos</b> os benefícios da <b>Colab 2.</b></p>
-                  <hr />
-                  <p>Participe de <b>sorteios mensais</b> de brindes.</p>
-                  <hr />
-                  <p>
-                    <b>Desconto</b> em eventos e cursos online de nossas
-                    parcerias.
-                  </p>
-                  <hr />
-                  <b>Edição física do livro</b>
-                  "<a>Encarceramento em massa</a>",
-                  <p>de Juliana Borges.</p>
-                  <img
-                    src="<?php bloginfo('template_directory'); ?>/images/desk/livro-encarceramento-em-massa.png"
-                    alt="Livro Encarceramento em Massa de Juliana Borges"
-                  />
-                  <div>
-                    <div class="row w-100 button-colab">
-                      <div class="col-12 mensal">Mensal</div>
-                      <div class="col-12 number">R$ <b>24,99</b></div>
-                    </div>
-                    <div class="row w-100 button-colab">
-                      <div class="col-12 mensal">Anual</div>
-                      <div class="col-12 number">R$ <b>279,99</b></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="bg-white p-2">
-                  <h3>COLAB 4</h3>
-                  <p><b>Todos</b> os benefícios da <b>Colab 3*.</b></p>
-                  <hr />
-                  <p>
-                    Sessões de 15 minutos de <b>bate-papo online</b> com as
-                    mulheres da redação.
-                  </p>
-                  <hr />
-                  <p>
-                    <b>Edição físicado livro</b>
-                    "<a
-                      >Você já é feminista; abra este livro e descubra o
-                      porquê</a
-                    >".
-                  </p>
-                  <img
-                    src="<?php bloginfo('template_directory'); ?>/images/desk/livro-voce-ja-e-feminista.png"
-                    alt="Livro você já é feminista"
-                  />
-                  <small class="small-book w-100"
-                    >* (exceto o livro “Encarceramento em massa”)</small
-                  >
-                  <div>
-                    <div class="row w-100 button-colab">
-                      <div class="col-12 mensal">Mensal</div>
-                      <div class="col-12 number">R$ <b>35,99</b></div>
-                    </div>
-                    <div class="row w-100 button-colab">
-                      <div class="col-12 mensal">Anual</div>
-                      <div class="col-12 number">R$ <b>479,99</b></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item bg-white p-2">
-                <div class="bg-white p-2">
-                  <h3>COLAB 5</h3>
-                  <p><b>Todos</b> os benefícios da <b>Colab 4.</b></p>
-                  <hr />
-                  <p>
-                    <b>Escolha</b> qual livro físico quer receber.
-                    "Encarceramento em massa" ou "Você já é feminista:abra este
-                    livro e descubra o porquê".
-                  </p>
-                  <hr />
-                  <p><b>Poster físico</b> feito pelas designers parceiras.</p>
-                  <img
-                    src="<?php bloginfo('template_directory'); ?>/images/desk/poster-fisico.png"
-                    alt="Poster físico feito pelas designer parceiras"
-                  />
-                  <div>
-                    <div class="row w-100 button-colab">
-                      <div class="col-12 mensal">Mensal</div>
-                      <div class="col-12 number">
-                        R$ <b>50,00</b> ou <b>+</b>
+        <?php
+          $args = array(  
+            'post_type' => 'reportagens',
+            'post_status' => 'publish',
+          );
+
+          $query = new WP_Query( $args );
+          if ( $query->have_posts()) :?>
+          <div class="cards wrapper only-desk">
+            <div id="sliderOne" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                <li
+                  data-target="#sliderOne"
+                  data-slide-to="<?php echo $query->current_post; ?>"
+                  class="<?php echo $query->current_post == 0 ? 'active' : ''?>"
+                ></li>
+                <?php endwhile; ?>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item  <?php echo $query->current_post == 0 ? 'active' : ''?>">
+                  <div class="bg-white p-2">
+                    <h3><?php the_title(); ?></h3>
+                    <?php the_content();?>
+                    <div>
+                    <a class="text-decoration-none" href="<?php the_field("link-plano-mensal")?>" target="_blank" rel="noopener noreferrer">
+                      <div class="row w-100 button-colab">
+                        <div class="col-12 mensal">Mensal</div>
+                        <?php if(get_field("valor-plano-mensal")):?>
+                          <div class="col-12 number">R$ <b><?php the_field("valor-plano-mensal")?></b></div>
+                        <?php endif;?>
+                      </div>
+                    </a>
+                      <div class="row w-100 button-colab">
+                        <div class="col-12 mensal">Anual</div>
+                          <?php if(get_field("valor-plano-anual")):?>
+                          <div class="row w-100 button-colab">
+                            <div class="col-12 mensal">Anual</div>
+                            <div class="col-12 number">R$ <b><?php the_field("valor-plano-anual")?></b></div>
+                          </div>
+                          <?php else:?>
+                            <div class="mensal">_________</div>
+                          <?php endif;?>
                       </div>
                     </div>
-                    <div class="mensal">_________</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <button class="btn" type="button">
-          <a
-            target="_blank"
-            href="https://www.catarse.me/azmina?ref=&utm_source=web_27abr_apoiehome"
-            >Apoie agora</a
-          >
-        </button>
+          <button class="btn" type="button">
+            <a
+              target="_blank"
+              href="<?php the_field("link-apoie-nos-somos")?>"
+              >Apoie agora</a
+            >
+          </button>
+          <?php endif;?>
       </section>
+
+      <?php
+      $args = array(  
+        'post_type' => 'reportagens',
+        'post_status' => 'publish',
+      );
+
+      $query = new WP_Query( $args );
+      if ( $query->have_posts()) :?>
       <section class="wrapper section-4">
-        <h2 class="title">Nós fazemos jornalismo de impacto</h2>
-        <p>
-          Produzimos informação de impacto, trazendo <b>pluralidade</b> de vozes
-          e histórias para a rotina das mulheres. Não só através da
-          <b>Revista AzMina</b>, como pela plataforma <b>Elas no Congresso</b> e
-          no aplicativo <b>PenhaS</b>, que denuncia a violência contra a mulher.
-        </p>
-        <p>
-          Na hora que você contribui com a gente, também está participando de
-          reportagens reconhecidas como essas:
-        </p>
+        <h2 class="title"><?php the_field("titulo-nos-fazemos");?></h2>
+        <?php the_field("descricao-nos-fazemos");?>
         <div class="row only-mobile">
+          <?php while ( $query->have_posts() ) : $query->the_post(); ?>
           <div class="col-12 col-md-6 col-lg-6 col-xl-6 p-2">
-            <img
-              src="<?php bloginfo('template_directory'); ?>/images/desk/img-cultura.png"
-              alt="Heroínas negras do Brasil"
-              class="img img-responsive w-100"
-            />
-            <p class="cultura mb-0 mt-3">cultura</p>
-            <h3 class="text-cultura mt-2">
-              Heroínas negras do Brasil: cinco mulheres que todos devem conhecer
-            </h3>
-            <p class="cultura-name">Júlia de Miranda</p>
-          </div>
-          <div class="col-12 col-md-6 col-lg-6 col-xl-6 p-2">
-            <img
-              src="<?php bloginfo('template_directory'); ?>/images/desk/img-comportamento.png"
-              alt="Influenciadoras negras enfretando racismo nas redes"
-              class="img img-responsive w-100"
-            />
-            <p class="cultura mb-0 mt-3">comportamento</p>
-            <h3 class="text-cultura mt-2">
-              O algoritmo que lute! Como influenciadoras negras enfrentam o
-              racismo nas redes
-            </h3>
-            <p class="cultura-name">Marília Moreira</p>
-          </div>
+            <a class="text-left" href="<?php the_field("link-reportagem")?>" target="_blank" rel="noopener noreferrer">
+              <?php 
+              $image = get_field('imagem-repostagem');
+              if( !empty( $image ) ): ?>
+                <img
+                  src="<?php echo esc_url($image['url']); ?>"
+                  alt="<?php echo esc_attr($image['alt']); ?>"
+                  class="img img-responsive w-100"
+                />
+              <?php endif; ?>
+              <p class="cultura mb-0 mt-3">
+                <?php 
+                  $term = get_field("categoria");
+                  echo esc_html( $term->name ); 
+                ?>
+              </p>
+              <h3 class="text-cultura mt-2">
+                <?php the_title(); ?>
+              </h3>
+              <p class="cultura-name"><?php the_field("author");?></p>
+            </a>
+            </div>
+          <?php 
+            endwhile;
+            wp_reset_postdata(); ?>
         </div>
         <div class="only-desk">
           <div id="slider" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-              <li data-target="#slider" data-slide-to="0" class="active"></li>
-              <li data-target="#slider" data-slide-to="1"></li>
+              <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                <li data-target="#slider" data-slide-to="<?php echo $query->current_post?>" class="<?php echo $query->current_post == 0 ? 'active' : ''?>"></li>
+              <?php endwhile; ?>
             </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active">
+              <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+              <div class="carousel-item <?php echo $query->current_post == 0 ? 'active' : ''?>">
                 <div>
+                <?php 
+                  $image = get_field('imagem-repostagem');
+                  if( !empty( $image ) ): ?>
                   <img
-                    src="<?php bloginfo('template_directory'); ?>/images/desk/img-cultura.png"
-                    alt="Heroínas negras do Brasil"
+                    src="<?php echo esc_url($image['url']); ?>"
+                    alt="<?php echo esc_attr($image['alt']); ?>"
                     class="img img-responsive w-100"
                   />
-                  <p class="cultura mb-0 mt-3">cultura</p>
+                  <?php endif; ?>
+                  <p class="cultura mb-0 mt-3">
+                  <?php 
+                    $term = get_field("categoria");
+                    echo esc_html( $term->name ); 
+                  ?>
+                  </p>
                   <h3 class="text-cultura mt-2">
-                    Heroínas negras do Brasil: cinco mulheres que todos devem
-                    conhecer
+                    <?php the_title(); ?>
                   </h3>
-                  <p class="cultura-name">Júlia de Miranda</p>
+                  <p class="cultura-name"><?php the_field("author");?></p>
                 </div>
               </div>
-              <div class="carousel-item">
-                <div>
-                  <img
-                    src="<?php bloginfo('template_directory'); ?>/images/desk/img-comportamento.png"
-                    alt="Influenciadoras negras enfretando racismo nas redes"
-                    class="img img-responsive w-100"
-                  />
-                  <p class="cultura mb-0 mt-3">comportamento</p>
-                  <h3 class="text-cultura mt-2">
-                    O algoritmo que lute! Como influenciadoras negras enfrentam
-                    o racismo nas redes
-                  </h3>
-                  <p class="cultura-name">Marília Moreira</p>
-                </div>
-              </div>
+              <?php 
+              endwhile;
+              wp_reset_postdata(); ?>
             </div>
           </div>
         </div>
       </section>
+      <?php endif;?>
+
       <hr class="row-section" />
-      <section class="wrapper section-5">
-        <h2 class="title mb-5">Com a palavra, nossas apoiadoras:</h2>
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-6 col-xl-6">
-            <div class="d-flex flex-row">
-              <div class="photo">
-                <img
-                  src="<?php bloginfo('template_directory'); ?>/images/desk/avatar_empodera.png"
-                  alt="Avatar de _empodera_"
-                />
+      
+        <section class="wrapper section-5">
+          <h2 class="title mb-5"><?php the_field("titulo-nossas-apoiadoras") ?></h2>
+          <?php
+            $args = array(  
+              'post_type' => 'apoiadoras',
+              'post_status' => 'publish',
+            );
+
+            $query = new WP_Query( $args );
+            if ( $query->have_posts()) :?>
+              <div class="row">
+                <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                  <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="d-flex flex-row">
+                      <div class="photo">
+                      <?php 
+                        $image = get_field('avatar-apoiadora');
+                        if( !empty( $image ) ): ?>
+                          <img
+                            src="<?php echo esc_url($image['url']); ?>"
+                            alt="<?php echo esc_attr($image['alt']); ?>"
+                            class="img img-responsive w-100"
+                          />
+                        <?php endif; ?>
+                      </div>
+                      <div class="description">
+                        <div>
+                          <?php the_title(); ?>
+                        </div>
+                        <div class="likes"><?php the_field("dias-apoiadora")?> <?php the_field("curtidas")?> curtida Responder</div>
+                      </div>
+                    </div>
+                    <br /><br />
+                  </div>
+                <?php 
+                  endwhile;
+                  wp_reset_postdata(); ?>
               </div>
-              <div class="description">
-                <div>
-                  _empodera_ Foi um prazer colaborar com esse trabalho 👊🏽 💜
-                </div>
-                <div class="likes">3d 1 curtida Responder</div>
-              </div>
-            </div>
-            <br /><br />
-            <div class="d-flex flex-row">
-              <div class="photo">
-                <img
-                  src="<?php bloginfo('template_directory'); ?>/images/desk/avatar_sara-alves.png"
-                  alt="Avatar de sara_alves.martins"
-                />
-              </div>
-              <div class="description">
-                <div>
-                  sara_alves.martins Encantada e agradecida com esse trabalho de
-                  vocês!!!
-                </div>
-                <div class="likes">2d 2 curtidas Responder</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-6 col-xl-6">
-            <div class="d-flex flex-row">
-              <div class="photo">
-                <img
-                  src="<?php bloginfo('template_directory'); ?>/images/desk/avatar_suzipires.png"
-                  alt="Avatar de suzipires"
-                />
-              </div>
-              <div class="description">
-                <div>
-                  suzipires
-                  <img
-                    src="<?php bloginfo('template_directory'); ?>/images/desk/correct.png"
-                    alt="Verificado"
-                    class="verify"
-                  />
-                  Vcs são foda! Necessárias ❤️
-                </div>
-                <div class="likes">4d 1 curtida Responder</div>
-              </div>
-            </div>
-            <br /><br />
-            <div class="d-flex flex-row">
-              <div class="photo">
-                <img
-                  src="<?php bloginfo('template_directory'); ?>/images/desk/avatar_rosalia.png"
-                  alt="Avatar de rosaliacalopes"
-                />
-              </div>
-              <div class="description">
-                <div>
-                  rosaliacalopes O trabalho de vcs é tão excepcional! Merecem
-                  todo reconhecimento💖👏🏼
-                </div>
-                <div class="likes">2 sem 2 curtidas Responder</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            <?php 
+            endif;
+            wp_reset_postdata(); ?>
+        </section>
+      
       <section class="wrapper newsletter">
         <div class="row">
           <div class="col-12 col-md-6 col-lg-6 col-xl-6">
@@ -657,13 +369,12 @@
       </section>
       <section class="wrapper section-6">
         <h3 class="title">
-          Junte-se à Revista AzMina na defesa<br />
-          dos direitos da mulher.
+          <?php the_field("titulo-junte-se")?>
         </h3>
         <button class="btn mt-3" type="button">
           <a
             target="_blank"
-            href="https://www.catarse.me/azmina?ref=&utm_source=web_27abr_apoiehome"
+            href="<?php the_field("link-junte-se")?>"
             >Apoie agora</a
           >
         </button>
