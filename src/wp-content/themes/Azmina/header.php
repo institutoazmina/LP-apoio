@@ -21,26 +21,42 @@
     />
   </head>
   <body>
+    <?php $bgDesk = get_field('banner-imagem-de-fundo-desk'); ?>
+    <?php $bgMobile = get_field('banner-imagem-de-fundo-mobile'); ?>
+    <style scoped>
+      header {
+        background-image: url(<?php echo esc_url($bgDesk['url']); ?>);
+        object-fit: cover;
+        height: 25rem;
+        align-items: flex-end;
+        background-size: cover;
+      }
+      @media only screen and (max-width: 600px) {
+        header {
+          background-image: url(<?php echo esc_url($bgMobile['url']); ?>);
+          background-repeat: no-repeat;
+          object-fit: cover !important;
+        }
+      }
+    </style>
     <header class="wrapper w-100 d-flex flex-row">
-      <div class="woman"></div>
+      <!-- <div class="woman"></div> -->
       <div class="header-main">
-        <div>
-          <div class="logo"></div>
-          <img
-            src="<?php bloginfo('template_directory'); ?>/images/desk/txt-hero-desk.png"
-            alt="O feminismo precisa de você!"
-            class="title only-mobile"
-          />
-          <img
-            src="<?php bloginfo('template_directory'); ?>/images/mobile/txt-hero-mobile.png"
-            alt="O feminismo precisa de você!"
-            class="title only-desk"
-          />
+        <div class="image">
+          <?php 
+            $image = get_field('imagem-banner');
+            if( !empty( $image ) ): ?>
+              <img
+                src="<?php echo esc_url($image['url']); ?>"
+                alt="<?php echo esc_attr($image['alt']); ?>"
+                class="img img-responsive w-100"
+              />
+          <?php endif; ?>
           <div class="only-mobile">
             <button class="btn" type="button">
               <a
                 target="_blank"
-                href="https://www.catarse.me/azmina?ref=&utm_source=web_27abr_apoiehome"
+                href="<?php the_field("link-botao-eu-apoio")?>"
                 >Eu apoio AzMina</a
               >
             </button>
@@ -48,3 +64,15 @@
         </div>
       </div>
     </header>
+    <section class="wrapper intro banner">
+      <div class="only-desk">
+        <button class="btn" type="button">
+          <a
+            target="_blank"
+            href="https://www.catarse.me/azmina?ref=&utm_source=web_27abr_apoiehome"
+            >Eu apoio AzMina</a
+          >
+        </button>
+      </div>
+      <h2 class="intro-text"><?php the_field("banner_texto_inferior")?></h2>
+    </section>

@@ -68,76 +68,59 @@ p {
 }
 
 header {
-  background-image: url(../../../images/desk/bg-hero-desk.jpg);
-  object-fit: cover;
-  height: 25rem;
-  align-items: flex-end;
-  background-size: cover;
+  &.wrapper {
+    align-items: baseline;
 
-  @media only screen and (max-width: 600px) {
-    background-image: url(../../../images/mobile/bg-hero.jpg);
-    background-repeat: no-repeat;
-    object-fit: cover !important;
-  }
-
-  .logo {
-    background-image: url(../../../images/desk/logo_azmina.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position-y: bottom;
-    height: 50px;
-    width: 150px;
-    background-size: cover;
-  }
-
-  h1 {
-    font-family: 'Downward Fall', sans-serif !important;
-    color: #def279;
-    letter-spacing: -1px;
-    line-height: 72px;
-    font-weight: 400;
-  }
-
-  .header-main {
-    @media only screen and (max-width: 600px) {
-      justify-content: initial;
-      padding: 10px;
+    .logo {
+      background-image: url(../../../images/desk/logo_azmina.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position-y: bottom;
+      height: 55px;
+      width: 156px;
+      background-size: cover;
     }
 
-    width: 100%;
-    position: absolute;
-    display: flex;
-    width: 100%;
-    max-width: 1290px;
-    flex-direction: column;
-    top: 0;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    height: 408px;
+    h1 {
+      font-family: 'Downward Fall', sans-serif !important;
+      color: #def279;
+      letter-spacing: -1px;
+      line-height: 72px;
+      font-weight: 400;
+    }
 
-    .title {
-      width: 516px;
-      height: 144px;
-      margin: 4% 0;
-
-      @media only screen and (max-width: 600px) {
-        object-fit: contain !important;
-        width: 100% !important;
+    .header-main {
+      margin: 0 0 48px 514px;
+  
+      @media only screen and (max-width: 481px) {
+        margin: 24px 0px 0px 28px;
       }
-    }
-  }
 
-  .woman {
-    background-image: url(../../../images/desk/img-hero.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 415px;
-    height: 360px;
-    background-position-y: bottom;
-
-    @media only screen and (max-width: 600px) {
-      width: 245px;
+      @media only screen and (max-width: 768px) {
+            margin: 70px 0 48px 434px;
+      }
+  
+      .image {
+       
+        @media only screen and (max-width: 768px) {
+          max-width: 308px;
+        }
+  
+        img {
+          margin: 0 0 39px 0;
+        }
+      }
+  
+      .title {
+        width: 516px;
+        height: 144px;
+        margin: 4% 0;
+  
+        @media only screen and (max-width: 600px) {
+          object-fit: contain !important;
+          width: 100% !important;
+        }
+      }
     }
   }
 }
@@ -157,17 +140,25 @@ header {
   }
 
   .intro-text {
-    font-family: 'Merriweather', sans-serif;
-    font-size: 24px;
-    color: #ffffff;
-    letter-spacing: 0;
-    line-height: 36px;
-    font-weight: 700;
+    p {
+      font-family: 'Merriweather', sans-serif;
+      font-size: 24px;
+      color: #ffffff;
+      letter-spacing: 0;
+      line-height: 36px;
+      font-weight: 700;
+    }
 
     @media only screen and (max-width: 600px) {
       margin-top: 20px;
-      font-size: 16px;
     }
+
+    p {
+      @media only screen and (max-width: 600px) {
+        font-size: 16px;
+      }
+    }
+    
   }
 }
 
@@ -354,6 +345,8 @@ header {
       text-decoration: underline !important;
     }
 
+    
+
     p, b, a {
       font-size: 15px !important;
     }
@@ -376,44 +369,67 @@ header {
       }
     }
 
-    .small-book {
-      display: table-row;
-      font-size: 11px;
-      color: #998d96;
-      letter-spacing: 0;
-      line-height: 14px;
-      text-align: initial;
-      font-weight: 400;
-    }
+    .card {
+      display: flex;
+      flex-direction: column;
 
-    .button-colab {
-      border: 2px solid #5c76dd;
-      border-radius: 24px;
-      margin-top: 20px !important;
-    }
-
-    .mensal {
-      font-size: 14px;
-      color: #5c76dd;
-      letter-spacing: 0;
-      line-height: 18px;
-      font-weight: 400;
-    }
-
-    .number {
-      font-family: Lato-Regular;
-      font-size: 14px;
-      color: #5c76dd;
-      letter-spacing: 0;
-      line-height: 18px;
-      font-weight: 400;
-
-      b {
-        font-size: 20px;
-        color: #5c76dd;
+      .small-book {
+        display: table-row;
+        font-size: 11px;
+        color: #998d96;
         letter-spacing: 0;
-        line-height: 28px;
-        font-weight: 700;
+        line-height: 14px;
+        text-align: initial;
+        font-weight: 400;
+      }
+  
+      .content-card {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+
+        hr {
+          width: 100%;
+        }
+      }
+  
+      .actions {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 auto;
+
+        .button-colab {
+          border: 2px solid #5c76dd;
+          border-radius: 24px;
+          margin-top: 20px !important;
+        }
+
+        .mensal {
+          font-size: 14px;
+          color: #5c76dd;
+          letter-spacing: 0;
+          line-height: 18px;
+          font-weight: 400;
+          font-family: 'Merriweather', sans-serif;
+        }
+    
+        .number {
+          font-family: 'Lato-Regular';
+          font-size: 14px;
+          color: #5c76dd;
+          letter-spacing: 0;
+          line-height: 18px;
+          font-weight: 400;
+    
+          b {
+            font-size: 20px !important;
+            color: #5c76dd;
+            letter-spacing: 0;
+            line-height: 28px;
+            font-weight: 700;
+            font-family: 'Merriweather';
+          }
+        }
       }
     }
   }
@@ -532,31 +548,38 @@ a {
 
 .section-4 {
   .cultura {
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    color: #ff808a;
-    letter-spacing: 0;
-    line-height: 24px;
-    font-weight: 400;
-    text-decoration: underline;
+    a {
+      font-family: 'Lato' !important;
+      font-size: 16px !important;
+      color: #ff808a;
+      letter-spacing: 0;
+      line-height: 24px;
+      font-weight: 400;
+      text-decoration: underline !important;
+    }
   }
 
   .cultura-name {
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    color: #998d96;
-    letter-spacing: 0;
-    line-height: 24px;
-    font-weight: 400;
+
+    a {
+      font-family: 'Lato' !important;
+      font-size: 16px !important;
+      color: #998D96 !important;
+      letter-spacing: 0;
+      line-height: 24px;
+      font-weight: 100;
+    }
   }
 
   .text-cultura {
-    font-family: Merriweather-Bold, sans-serif;
-    font-size: 24px;
-    color: #202020;
-    letter-spacing: 0;
-    line-height: 32px;
-    font-weight: 700;
+    a {
+      font-family: Merriweather-Bold !important;
+      font-size: 24px !important;
+      color: #202020 !important;
+      letter-spacing: 0;
+      line-height: 32px;
+      font-weight: 700;
+    }
   }
 }
 
@@ -631,9 +654,17 @@ footer {
   }
 
   small {
+    font-size: 16px;
+
     @media only screen and (max-width: 600px) {
       width: 85%;
       text-align: center;
+    }
+
+    a {
+      color: #def279 !important;
+      font-size: 16px !important;
+      text-decoration: underline !important;
     }
   }
 
