@@ -1,26 +1,8 @@
-  <?php /* Template Name: Home */ ?>
+  <?php 
+    /* Template Name: Home */ 
+  ?>
   <?php get_header();?>
     <main>
-      <section class="wrapper intro">
-        <div class="only-desk">
-          <button class="btn" type="button">
-            <a
-              target="_blank"
-              href="https://www.catarse.me/azmina?ref=&utm_source=web_27abr_apoiehome"
-              >Eu apoio AzMina</a
-            >
-          </button>
-        </div>
-        <h2 class="intro-text">
-          Informar é nossa principal estratégia na luta pelos direitos da
-          mulher. Lutamos por uma frente ampla de debate e resoluções de
-          problemas da nossa sociedade (que já passaram da hora de serem
-          resolvidos).
-          <br />
-          <br />
-          E queremos que todas e todos saibam disso.
-        </h2>
-      </section>
       <section class="wrapper">
         <div class="row section-2 section-2-1">
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
@@ -49,23 +31,25 @@
             $query = new WP_Query( $args );
             if ( $query->have_posts()) :
               while ( $query->have_posts() ) : $query->the_post();?>
-              <div class="col col-12 col-sm-12 col-md-3 col-lg-2 bg-white">
-                <h3><?php the_title(); ?></h3>
-                <?php the_content();?>
-                <div>
+              <div class="col col-12 col-sm-12 col-md-3 col-lg-2 bg-white card">
+                <div class="content-card">
+                  <h3><?php the_title(); ?></h3>
+                  <?php the_content();?>
+                </div>
+                <div class="actions">
                   <div class="row w-100 button-colab">
                     <?php if(get_field("valor-plano-mensal")):?>
-                      <a class="text-decoration-none" href="<?php the_field("link-plano-mensal")?>" target="_blank" rel="noopener noreferrer">
+                      <a class="text-decoration-none" href="<?php the_field("link-plano-mensal"); ?>" target="_blank" rel="noopener noreferrer">
                          <div class="col-12 mensal">Mensal</div>
-                         <div class="col-12 number">R$ <b><?php the_field("valor-plano-mensal")?></b></div>
+                         <div class="col-12 number">R$ <b><?php the_field("valor-plano-mensal");?></b></div>
                       </a>
                     <?php endif;?>
                     </div>
                     <?php if(get_field("valor-plano-anual")):?>
                       <div class="row w-100 button-colab">
-                        <a class="text-decoration-none" href="<?php the_field("link-plano-anual")?>" target="_blank" rel="noopener noreferrer">
+                        <a class="text-decoration-none" href="<?php the_field("link-plano-anual");?>" target="_blank" rel="noopener noreferrer">
                           <div class="col-12 mensal">Anual</div>
-                           <div class="col-12 number">R$ <b><?php the_field("valor-plano-anual")?></b></div>
+                           <div class="col-12 number">R$ <b><?php the_field("valor-plano-anual");?></b></div>
                         </a>
                       </div>
                       <?php else:?>
@@ -137,7 +121,9 @@
               >Apoie agora</a
             >
           </button>
-          <?php endif;?>
+          <?php 
+            wp_reset_postdata();
+            endif;?>
       </section>
 
       <?php
@@ -147,16 +133,16 @@
       );
 
       $query = new WP_Query( $args );
-      if ( $query->have_posts()) :?>
+      if ( $query->have_posts()) : ?>
       <section class="wrapper section-4">
         <h2 class="title"><?php the_field("titulo-nos-fazemos");?></h2>
         <?php the_field("descricao-nos-fazemos");?>
         <div class="row only-mobile">
           <?php while ( $query->have_posts() ) : $query->the_post(); ?>
           <div class="col-12 col-md-6 col-lg-6 col-xl-6 p-2">
-            <a class="text-left" href="<?php the_field("link-reportagem")?>" target="_blank" rel="noopener noreferrer">
+           
               <?php 
-              $image = get_field('imagem-repostagem');
+              $image = get_field('imagem-reportagem');
               if( !empty( $image ) ): ?>
                 <img
                   src="<?php echo esc_url($image['url']); ?>"
@@ -164,17 +150,31 @@
                   class="img img-responsive w-100"
                 />
               <?php endif; ?>
-              <p class="cultura mb-0 mt-3">
-                <?php 
-                  $term = get_field("categoria");
-                  echo esc_html( $term->name ); 
-                ?>
-              </p>
-              <h3 class="text-cultura mt-2">
-                <?php the_title(); ?>
-              </h3>
-              <p class="cultura-name"><?php the_field("author");?></p>
-            </a>
+                <?php if( have_rows('categoria') ):
+                   while( have_rows('categoria') ): the_row();?>
+                    <p class="cultura mb-0 mt-3">
+                      <a href="<?php the_sub_field("link-da-categoria")?>" target="_blank">
+                        <?php the_sub_field("nome-da-categoria"); ?>
+                      </a>
+                    </p>
+                <?php
+                endwhile;
+                endif;?>
+                <h3 class="text-cultura mt-2">
+                  <a href="<?php the_field("link-da-reportagem")?>" target="_blank">
+                    <?php the_title(); ?>
+                  </a>
+                </h3>
+                <p class="cultura-name">
+                  <?php if( have_rows('author') ) : 
+                    while ( have_rows('author') ) : the_row();?>
+                      <a href="<?php the_sub_field("link-do-autor")?>" target="_blank">
+                        <?php the_sub_field("nome-do-autor");?>
+                      </a>
+                  <?php
+                    endwhile;
+                    endif;?>
+                </p>
             </div>
           <?php 
             endwhile;
@@ -194,22 +194,37 @@
                 <?php 
                   $image = get_field('imagem-repostagem');
                   if( !empty( $image ) ): ?>
-                  <img
-                    src="<?php echo esc_url($image['url']); ?>"
-                    alt="<?php echo esc_attr($image['alt']); ?>"
-                    class="img img-responsive w-100"
-                  />
+                    <img
+                      src="<?php echo esc_url($image['url']); ?>"
+                      alt="<?php echo esc_attr($image['alt']); ?>"
+                      class="img img-responsive w-100"
+                    />
                   <?php endif; ?>
-                  <p class="cultura mb-0 mt-3">
-                  <?php 
-                    $term = get_field("categoria");
-                    echo esc_html( $term->name ); 
-                  ?>
-                  </p>
-                  <h3 class="text-cultura mt-2">
+                  <?php if( have_rows('categoria') ):
+                   while( have_rows('categoria') ): the_row();?>
+                      <p class="cultura mb-0 mt-3">
+                        <a href="<?php the_sub_field("link-da-categoria")?>" target="_blank">
+                          <?php the_sub_field("nome-da-categoria"); ?>
+                        </a>
+                      </p>
+                  <?php
+                  endwhile;
+                  endif;?>
+                   <h3 class="text-cultura mt-2">
+                  <a href="<?php the_field("link-da-reportagem")?>" target="_blank">
                     <?php the_title(); ?>
-                  </h3>
-                  <p class="cultura-name"><?php the_field("author");?></p>
+                  </a>
+                </h3>
+                <p class="cultura-name">
+                  <?php if( have_rows('author') ) : 
+                    while ( have_rows('author') ) : the_row();?>
+                      <a href="<?php the_sub_field("link-do-autor")?>" target="_blank">
+                        <?php the_sub_field("nome-do-autor");?>
+                      </a>
+                  <?php
+                    endwhile;
+                    endif;?>
+                </p>
                 </div>
               </div>
               <?php 
