@@ -37,12 +37,12 @@
     </footer>
 
     <script src="<?php bloginfo('template_directory'); ?>/assets/dist/js/app.min.js"></script>
-    <script src="<?php bloginfo('template_directory'); ?>/assets/dist/js/main.min.js?v=123"></script>
-    <script
+    <script src="<?php bloginfo('template_directory'); ?>/assets/dist/js/main.min.js?v=124"></script>
+    <!-- <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://cdn.rawgit.com/powerticmkt/mautic-form-masks/508e1c4c/mautic-form-masks.js"></script>
