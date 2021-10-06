@@ -1,8 +1,16 @@
 $(document).ready(function() { 
   // Activate Carousel
-  jQuery('.carousel').carousel();
-  jQuery('[data-toggle="tooltip"]').tooltip({ html: true, placement: 'bottom' });
+  // jQuery('.carousel').carousel();
+  // jQuery('[data-toggle="tooltip"]').tooltip({ html: true, placement: 'bottom' });
 
+  $('#slider-tipo-dist').slick({
+    infinite: false,
+    dots: true,
+    arrows: false,
+    customPaging: function(slider, i) {
+      return '<span class="dot"></span>';
+    },
+  })
   /** This section is only needed once per page if manually copying **/
   if (typeof MauticSDKLoaded == 'undefined') {
     var MauticSDKLoaded = true;

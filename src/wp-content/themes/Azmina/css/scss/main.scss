@@ -1,4 +1,5 @@
 @import url('../fonts/Merriweather-Bold.ttf');
+@import  '../../node_modules/bootstrap/scss/bootstrap';
 
 * {
   font-family: 'Merriweather', sans-serif;
@@ -67,6 +68,11 @@ p {
   font-size: 18px;
 }
 
+.slick-dots {
+  li {
+    
+  }
+}
 header {
   &.wrapper {
     align-items: baseline;
@@ -324,11 +330,12 @@ header {
     padding: 4% 6% !important;
   }
 
-  button {
-    @media only screen and (max-width: 600px) {
-      width: 300px;
-    }
-
+  .btn {
+    background-color: #def279 !important;
+    border-color: #def279 !important;
+    border-radius: 24px !important;
+    letter-spacing: 0;
+    width: 300px;
     margin: 5%;
   }
 
@@ -372,6 +379,7 @@ header {
     .card {
       display: flex;
       flex-direction: column;
+      height: 100%;
 
       .small-book {
         display: table-row;
@@ -462,7 +470,6 @@ header {
   img {
     max-width: 100%;
     object-fit: contain;
-    margin-bottom: 20px;
   }
 
   .row {
