@@ -16,8 +16,8 @@ $(document).ready(function() {
         slidesToShow: 3,
       },
       {
-          breakpoint: 1023,
-          settings: "unslick"
+        breakpoint: 1023,
+        settings: "unslick"
       }
     ]
   })
@@ -71,6 +71,6 @@ $(document).ready(function() {
   }
 });
 
-window.onload = function() {
+/** window.onload = function() {
   jQuery('[data-toggle="tooltip"]').tooltip({ html: true, placement: 'bottom' });
-};
+}; **/
