@@ -1,15 +1,47 @@
 $(document).ready(function() { 
   // Activate Carousel
   // jQuery('.carousel').carousel();
-  // jQuery('[data-toggle="tooltip"]').tooltip({ html: true, placement: 'bottom' });
+  jQuery('[data-toggle="tooltip"]').tooltip({ html: true, placement: 'bottom' });
 
   $('#slider-tipo-dist').slick({
     infinite: false,
     dots: true,
     arrows: false,
+    mobileFirst: true,
     customPaging: function(slider, i) {
       return '<span class="dot"></span>';
     },
+    responsive: [
+      {
+        breakpoint: 767,
+        slidesToShow: 3,
+      },
+      {
+          breakpoint: 1023,
+          settings: "unslick"
+      }
+    ]
+  })
+
+  $('#slider-reportagens').slick({
+    infinite: false,
+    dots: true,
+    arrows: false,
+    mobileFirst: true,
+    slidesToShow: 1,
+    customPaging: function(slider, i) {
+      return '<span class="dot"></span>';
+    },
+    responsive: [
+      {
+        breakpoint: 767,
+        slidesToShow: 3,
+      },
+      {
+        breakpoint: 1023,
+        settings: "unslick"
+      }
+    ]
   })
   /** This section is only needed once per page if manually copying **/
   if (typeof MauticSDKLoaded == 'undefined') {
@@ -29,8 +61,11 @@ $(document).ready(function() {
 
     head.appendChild(script);
 
-    var MauticDomain = 'https://mautic.azmina.com.br';
+    window.MauticDomain = 'https://mautic.azmina.com.br';
 
+    window.MauticLang   = {
+      'submittingMessage': "Enviando..."
+    }
     var MauticLang = {
       submittingMessage: 'Enviando...'
     };

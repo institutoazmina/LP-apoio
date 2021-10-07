@@ -76,4 +76,4 @@ function watch() {
 gulp.task("watch", watch);
 
 // Task Default
-gulp.task("default", gulp.parallel("watch", "sass", "js", "libcss", "libs"));
+gulp.task("default", gulp.parallel("sass", "js", "libcss", "libs"));
