@@ -64,67 +64,9 @@
              ?>
           </div>
         </div>
-        <?php
-          // $args = array(  
-          //   'post_type' => 'tipo-de-contribuicao',
-          //   'post_status' => 'publish',
-          // );
-
-          // $query = new WP_Query( $args );
-          // if ( $query->have_posts()) :  ?>
-          <!-- <div class="cards wrapper only-desk">
-            <div id="sliderOne" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-                <li
-                  data-target="#sliderOne"
-                  data-slide-to="<?php echo $query->current_post; ?>"
-                  class="<?php echo $query->current_post == 0 ? 'active' : ''?>">
-                </li>
-                <?php endwhile; ?>
-              </ol>
-              <div class="carousel-inner">
-                <?php while ( $query->have_posts() ) : $query->the_post();?>
-                
-                  <div class="carousel-item  <?php echo $query->current_post == 0 ? 'active' : ''?>">
-                    <div class="bg-white card p-2">
-                      <div class="content-card">
-                        <h3><?php the_title(); ?></h3>
-                        <?php the_content();?>
-                      </div>
-                      <div>
-                        <div class="actions">
-                          <div class="row w-100 button-colab">
-                              <?php if(get_field("valor-plano-mensal")):?>
-                              <a class="text-decoration-none" href="<?php the_field("link-plano-mensal"); ?>" target="_blank" rel="noopener noreferrer">
-                                <div class="col-12 mensal">Mensal</div>
-                                <div class="col-12 number">R$ <b><?php the_field("valor-plano-mensal");?></b></div>
-                              </a>
-                              <?php endif;?>
-                            </div>
-                            <?php if(get_field("valor-plano-anual")):?>
-                              <div class="row w-100 button-colab">
-                                <a class="text-decoration-none" href="<?php the_field("link-plano-anual");?>" target="_blank" rel="noopener noreferrer">
-                                  <div class="col-12 mensal">Anual</div>
-                                  <div class="col-12 number">R$ <b><?php the_field("valor-plano-anual");?></b></div>
-                                </a>
-                              </div>
-                            <?php endif;?>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <?php endwhile; ?>
-              </div>
-            </div>
-          </div> -->
-          <?php // wp_reset_postdata(); endif;?>
-            <a class="btn"
-              target="_blank"
-              href="<?php the_field("link-apoie-nos-somos")?>">
-              Apoie agora
-            </a>
+        <a class="btn" target="_blank" href="<?php the_field("link-apoie-nos-somos")?>">
+          Apoie agora
+        </a>
       </section>
 
       <?php
@@ -134,7 +76,7 @@
         <section class="wrapper section-4">
           <h2 class="title"><?php the_field("titulo-nos-fazemos");?></h2>
           <?php the_field("descricao-nos-fazemos");?>
-          <div class="row only-mobile">
+          <div id="slider-reportagens" class="d-block d-lg-flex">
             <?php while ( $query->have_posts() ) : $query->the_post(); ?>
             <div class="col-12 col-md-6 col-lg-6 col-xl-6 p-2">
             
@@ -177,65 +119,12 @@
               endwhile;
               wp_reset_postdata(); ?>
           </div>
-          <!-- <div class="only-desk">
-            <div id="slider" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-                  <li data-target="#slider" data-slide-to="<?php echo $query->current_post?>" class="<?php echo $query->current_post == 0 ? 'active' : ''?>"></li>
-                <?php endwhile; ?>
-              </ol>
-              <div class="carousel-inner">
-                <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-                  <div class="carousel-item <?php echo $query->current_post == 0 ? 'active' : ''?>">
-                  
-                    <?php 
-                    $image = get_field('imagem-reportagem');
-                    if( !empty( $image ) ): ?>
-                      <img
-                        src="<?php echo esc_url($image['url']); ?>"
-                        alt="<?php echo esc_attr($image['alt']); ?>"
-                        class="img img-responsive w-100"
-                      />
-                      <?php endif; ?>
-                      <?php if( have_rows('categoria') ):
-                      while( have_rows('categoria') ): the_row();?>
-                          <p class="cultura mb-0 mt-3">
-                            <a href="<?php the_sub_field("link-da-categoria")?>" target="_blank">
-                              <?php the_sub_field("nome-da-categoria"); ?>
-                            </a>
-                          </p>
-                      <?php
-                      endwhile;
-                      endif;?>
-                      <h3 class="text-cultura mt-2">  
-                        <a href="<?php the_field("link-da-reportagem")?>"  target="_blank">
-                          <?php the_title(); ?>
-                        </a>
-                      </h3>
-                      <p class="cultura-name">
-                      <?php if( have_rows('author') ) : 
-                        while ( have_rows('author') ) : the_row();?>
-                          <a href="<?php the_sub_field("link-do-autor")?>" target="_blank">
-                            <?php the_sub_field("nome-do-autor");?>
-                          </a>
-                        <?php
-                          endwhile;
-                          endif;?>
-                      </p>
-                  
-                </div>
-                <?php 
-                endwhile;
-                wp_reset_postdata(); ?>
-              </div>
-            </div>
-          </div> -->
         </section>
       <?php endif;?>
 
-      <hr class="row-section" />
+      <hr class="row-section"/>
       
-      <section class="wrapper section-5">
+      <section class="wrapper section-5 overflow-hidden">
         <h2 class="title mb-5"><?php the_field("titulo-nossas-apoiadoras") ?></h2>
         <?php
           $args = array(  
@@ -250,7 +139,7 @@
                 <div class="col-12 col-md-6 col-lg-6 col-xl-6">
                   <div class="d-flex flex-row">
                     <div class="photo">
-                    <?php 
+                      <?php 
                       $image = get_field('avatar-apoiadora');
                       if( !empty( $image ) ): ?>
                         <img

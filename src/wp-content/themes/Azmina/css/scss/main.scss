@@ -69,8 +69,24 @@ p {
 }
 
 .slick-dots {
+  list-style-type: none;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 0;
+  width: 100%;
+  justify-content: center;
+  padding-left: 0;
+
   li {
-    
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 1px solid #ff808a;
+    margin: 0 5px;
+
+    &.slick-active {
+      background: #ff808a;
+    }
   }
 }
 header {
@@ -110,6 +126,13 @@ header {
        
         @media only screen and (max-width: 768px) {
           max-width: 308px;
+        }
+
+        @media only screen and (max-width: 600px) {
+          position: absolute;
+          top: 20px;
+          display: block;
+          left: 30px;
         }
   
         img {
@@ -379,7 +402,10 @@ header {
     .card {
       display: flex;
       flex-direction: column;
-      height: 100%;
+      flex: 1;
+      margin: 0 10px;
+      padding: 15px 15px;
+      align-items: stretch;
 
       .small-book {
         display: table-row;
@@ -395,6 +421,7 @@ header {
         display: flex;
         flex-direction: column;
         flex: 1 0 auto;
+        align-items: center;
 
         hr {
           width: 100%;
@@ -624,7 +651,7 @@ a {
       background: #f4f3ef;
     }
   }
-  .carousel-indicators {
+  /** .carousel-indicators {
     bottom: -25px !important;
 
     li {
@@ -638,7 +665,7 @@ a {
     .active {
       background: #ff808a;
     }
-  }
+  } **/
 }
 .wrapper {
   margin: 0 auto;
