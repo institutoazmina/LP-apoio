@@ -8,6 +8,35 @@
 /* scrollbar */
 body {
   overflow-x: hidden; /* Hide horizontal scrollbar */
+
+  header, main {
+    h2 {
+      font-weight: 700;
+    }
+
+    p {
+      color: #202020;
+      font-size: 18px;
+    }
+
+    button {
+      background-color: #def279 !important;
+      border-color: #def279 !important;
+      border-radius: 24px !important;
+      letter-spacing: 0;
+      width: 300px;
+    }
+    a {
+      font-family: 'Lato', sans-serif !important;
+      font-size: 20px !important;
+      color: #ff808a !important;
+      text-decoration: none !important;
+      letter-spacing: 0;
+      text-align: center;
+      line-height: 24px;
+      font-weight: 700;
+    }
+  }
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -60,13 +89,7 @@ img {
   }
 }
 
-h2 {
-  font-weight: 700;
-}
-p {
-  color: #202020;
-  font-size: 18px;
-}
+
 
 .slick-dots {
   list-style-type: none;
@@ -191,13 +214,27 @@ header {
   }
 }
 
-.tooltip {
-  .tooltip-inner {
-    background: #2e3e8f;
-    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
+.su-tooltip-button {
+  font-family: 'Lato', sans-serif !important;
+  color: #ff808a !important;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 24px;
+  text-decoration: underline !important;
+}
 
-    p:nth-child(1) {
+.su-tooltip {
+  .su-tooltip-arrow {
+    background: #2e3e8f !important;
+    top: -5px;
+  }
+
+  .su-tooltip-inner {
+    background: #2e3e8f !important;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.5) !important;
+    border-radius: 8px !important;
+
+    .su-tooltip-title {
       font-size: 18px !important;
       color: #2bd9d9;
       letter-spacing: 0;
@@ -207,23 +244,25 @@ header {
       margin-bottom: 0;
     }
 
-    p:nth-child(2) {
-      font-size: 14px !important;
-      text-align: initial;
-      color: #def279 !important;
-      letter-spacing: 0;
-      line-height: 18px;
-      font-weight: 400;
-      margin-bottom: 0;
-    }
+    .su-tooltip-content {
+      div {
+        font-size: 14px !important;
+        text-align: initial;
+        color: #def279 !important;
+        letter-spacing: 0;
+        line-height: 18px;
+        font-weight: 400;
+        margin-bottom: 8px;
+      }
 
-    p:nth-child(3) {
-      font-size: 14px !important;
-      color: #ffffff !important;
-      letter-spacing: 0;
-      line-height: 18px;
-      text-align: initial;
-      font-weight: 400;
+      p {
+        font-size: 14px !important;
+        color: #ffffff !important;
+        letter-spacing: 0;
+        line-height: 18px;
+        text-align: initial;
+        font-weight: 400;
+      }
     }
   }
 }
@@ -425,6 +464,7 @@ header {
 
         hr {
           width: 100%;
+          border-top: 1px solid rgba(0,0,0,0.1) !important;
         }
       }
   
@@ -523,23 +563,7 @@ header {
     }
 }
 /**** Nao entendi essa parte do codigo revisar *********/
-button {
-  background-color: #def279 !important;
-  border-color: #def279 !important;
-  border-radius: 24px !important;
-  letter-spacing: 0;
-  width: 300px;
-}
-a {
-  font-family: 'Lato', sans-serif !important;
-  font-size: 20px !important;
-  color: #ff808a !important;
-  text-decoration: none !important;
-  letter-spacing: 0;
-  text-align: center;
-  line-height: 24px;
-  font-weight: 700;
-}
+
 
 .newsletter {
   @media only screen and (max-width: 600px) {
