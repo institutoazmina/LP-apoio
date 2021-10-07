@@ -1,7 +1,6 @@
 $(document).ready(function() { 
   // Activate Carousel
   // jQuery('.carousel').carousel();
-  jQuery('[data-toggle="tooltip"]').tooltip({ html: true, placement: 'bottom' });
 
   $('#slider-tipo-dist').slick({
     infinite: false,
@@ -71,3 +70,7 @@ $(document).ready(function() {
     };
   }
 });
+
+window.onload = function() {
+  jQuery('[data-toggle="tooltip"]').tooltip({ html: true, placement: 'bottom' });
+};
