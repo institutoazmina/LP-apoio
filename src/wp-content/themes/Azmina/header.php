@@ -61,7 +61,7 @@
     <header class="wrapper w-100 d-flex flex-row">
       <div class="header-main">
         <div class="image">
-          <?php 
+          <?php
             $image = get_field('imagem-banner');
             if( !empty( $image ) ): ?>
               <img

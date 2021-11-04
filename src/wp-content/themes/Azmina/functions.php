@@ -2,7 +2,7 @@
 
 // Our custom post type function
 function create_posttype() {
- 
+
   register_post_type( 'tipo-de-contribuicao',
   // CPT Options
       array(

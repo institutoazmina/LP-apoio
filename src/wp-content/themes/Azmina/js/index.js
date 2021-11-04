@@ -1,4 +1,4 @@
-$(document).ready(function() { 
+$(document).ready(function() {
   // Activate Carousel
   // jQuery('.carousel').carousel();
 

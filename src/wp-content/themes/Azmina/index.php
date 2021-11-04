@@ -1,5 +1,5 @@
-  <?php 
-    /* Template Name: Home */ 
+  <?php
+    /* Template Name: Home */
   ?>
   <?php get_header();?>
     <main>
@@ -24,7 +24,7 @@
         <div class="cards wrapper">
           <div class="row" id="slider-tipo-dist">
           <?php
-            $args = array(  
+            $args = array(
               'post_type' => 'tipo-de-contribuicao',
               'post_status' => 'publish',
               'order' => 'ASC',
@@ -65,7 +65,7 @@
                     <?php endif;?>
                   </div>
                 </div>
-              <?php 
+              <?php
               endwhile;
               wp_reset_postdata();
             endif;
@@ -91,8 +91,8 @@
           <div id="slider-reportagens" class="d-block d-lg-flex">
             <?php while ( $query->have_posts() ) : $query->the_post(); ?>
             <div class="col-12 col-md-6 col-lg-6 col-xl-6 p-2">
-            
-                <?php 
+
+                <?php
                 $image = get_field('imagem-reportagem');
                 if( !empty( $image ) ): ?>
                   <img
@@ -117,7 +117,7 @@
                     </a>
                   </h3>
                   <p class="cultura-name">
-                    <?php if( have_rows('author') ) : 
+                    <?php if( have_rows('author') ) :
                       while ( have_rows('author') ) : the_row();?>
                         <a href="<?php the_sub_field("link-do-autor")?>" target="_blank">
                           <?php the_sub_field("nome-do-autor");?>
@@ -127,7 +127,7 @@
                       endif;?>
                   </p>
               </div>
-            <?php 
+            <?php
               endwhile;
               wp_reset_postdata(); ?>
           </div>
@@ -135,11 +135,11 @@
       <?php endif;?>
 
       <hr class="row-section"/>
-      
+
       <section class="wrapper section-5 overflow-hidden">
         <h2 class="title mb-5"><?php the_field("titulo-nossas-apoiadoras") ?></h2>
         <?php
-          $args = array(  
+          $args = array(
             'post_type' => 'apoiadoras',
             'post_status' => 'publish',
           );
@@ -151,7 +151,7 @@
                 <div class="col-12 col-md-6 col-lg-6 col-xl-6">
                   <div class="d-flex flex-row">
                     <div class="photo">
-                      <?php 
+                      <?php
                       $image = get_field('avatar-apoiadora');
                       if( !empty( $image ) ): ?>
                         <img
@@ -170,15 +170,15 @@
                   </div>
                   <br /><br />
                 </div>
-              <?php 
+              <?php
                 endwhile;
                 wp_reset_postdata(); ?>
             </div>
-          <?php 
+          <?php
           endif;
           wp_reset_postdata(); ?>
       </section>
-      
+
       <section class="wrapper newsletter">
         <div class="row">
           <div class="col-12 col-md-6 col-lg-6 col-xl-6">
