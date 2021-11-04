@@ -18,6 +18,10 @@
     })(window,document,'script','dataLayer','GTM-N3ZL6D2');</script>
     <!-- End Google Tag Manager -->
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L2XTJNL5CY"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L2XTJNL5CY');</script>
+
     <!-- <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
