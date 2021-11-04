@@ -36,10 +36,10 @@
       <small>© 2021 Revista AZMina - Todos os Direitos Reservados <a href="https://azmina.com.br/instituto-azmina/o-conteudo-dazmina-e-livre-de-direitos-autorais/" target="_blank">Saiba mais</a></small>
     </footer>
 
+    <?php wp_footer(); ?>
     <script src="<?php bloginfo('template_directory'); ?>/assets/dist/js/app.min.js?v=<?php echo rand();?>"></script>
     <script src="<?php bloginfo('template_directory'); ?>/assets/dist/js/main.min.js?v=<?php echo rand();?>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://cdn.rawgit.com/powerticmkt/mautic-form-masks/508e1c4c/mautic-form-masks.js"></script>
-    <?php wp_footer(); ?>
   </body>
 </html>
