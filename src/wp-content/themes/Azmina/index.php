@@ -41,7 +41,11 @@
                 <div class="actions">
                   <div class="row w-100 button-colab">
                     <?php if(get_field("valor-plano-mensal")):?>
-                      <a class="text-decoration-none" href="<?php the_field("link-plano-mensal"); ?>" target="_blank" rel="noopener noreferrer">
+                      <a class="text-decoration-none" href="<?php the_field("link-plano-mensal"); ?>" target="_blank" rel="noopener noreferrer"
+                        data-ga-category="lp:apoie"
+                        data-ga-action="click"
+                        data-ga-label="tabela:<?php echo $post->post_name; ?>:mensal"
+                      >
                          <div class="col-12 mensal">Mensal</div>
                          <div class="col-12 number">R$ <b><?php the_field("valor-plano-mensal");?></b></div>
                       </a>
@@ -49,7 +53,11 @@
                     </div>
                     <?php if(get_field("valor-plano-anual")):?>
                       <div class="row w-100 button-colab">
-                        <a class="text-decoration-none" href="<?php the_field("link-plano-anual");?>" target="_blank" rel="noopener noreferrer">
+                        <a class="text-decoration-none" href="<?php the_field("link-plano-anual");?>" target="_blank" rel="noopener noreferrer"
+                          data-ga-category="lp:apoie"
+                          data-ga-action="click"
+                          data-ga-label="tabela:<?php echo $post->post_name; ?>:anual"
+                        >
                           <div class="col-12 mensal">Anual</div>
                            <div class="col-12 number">R$ <b><?php the_field("valor-plano-anual");?></b></div>
                         </a>
@@ -64,7 +72,11 @@
              ?>
           </div>
         </div>
-        <a class="btn" target="_blank" href="<?php the_field("link-apoie-nos-somos")?>">
+        <a class="btn" target="_blank" href="<?php the_field("link-apoie-nos-somos")?>"
+          data-ga-category="lp:apoie"
+          data-ga-action="click"
+          data-ga-label="rodape:apoie-agora"
+        >
           Apoie agora
         </a>
       </section>
@@ -276,6 +288,9 @@
           <a
             target="_blank"
             href="<?php the_field("link-junte-se")?>"
+            data-ga-category="lp:apoie"
+            data-ga-action="click"
+            data-ga-label="rodape:apoie-agora"
             >Apoie agora</a
           >
         </button>

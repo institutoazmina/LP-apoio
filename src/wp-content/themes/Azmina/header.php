@@ -8,6 +8,16 @@
     <title><?php echo get_the_title(); ?></title>
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/dist/css/style.min.css?v=<?php echo rand();?>" />
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/dist/css/main.css?v=<?php echo rand();?>" />
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
+    re(j,f);
+    })(window,document,'script','dataLayer','GTM-N3ZL6D2');</script>
+    <!-- End Google Tag Manager -->
+
     <!-- <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -21,6 +31,11 @@
     <?php wp_head(); ?>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N3ZL6D2"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <?php $bgDesk = get_field('banner-imagem-de-fundo-desk'); ?>
     <?php $bgMobile = get_field('banner-imagem-de-fundo-mobile'); ?>
     <style scoped>
@@ -54,6 +69,11 @@
           <div class="only-mobile">
             <button class="btn" type="button">
               <a
+                data-ga
+                data-ga-category="lp:apoie"
+                data-ga-action="click"
+                data-ga-label="topo:eu-apoio-azmina"
+
                 target="_blank"
                 href="<?php the_field("link-botao-eu-apoio")?>"
                 >Eu apoio AzMina</a
