@@ -7,6 +7,7 @@
             class="col-3"
             href="<?php the_field('link_facebook')?>"
             target="_blank"
+            data-ga
             data-ga-category="lp:apoie"
             data-ga-action="click"
             data-ga-label="rodape:social:facebook"
@@ -17,6 +18,7 @@
             class="col-3"
             href="<?php the_field('link_twitter')?>"
             target="_blank"
+            data-ga
             data-ga-category="lp:apoie"
             data-ga-action="click"
             data-ga-label="rodape:social:twitter"
@@ -27,6 +29,7 @@
             class="col-3"
             href="<?php the_field('link_instagram')?>"
             target="_blank"
+            data-ga
             data-ga-category="lp:apoie"
             data-ga-action="click"
             data-ga-label="rodape:social:instagram"
@@ -37,6 +40,7 @@
             class="col-3"
             href="<?php the_field('link_youtube')?>"
             target="_blank"
+            data-ga
             data-ga-category="lp:apoie"
             data-ga-action="click"
             data-ga-label="rodape:social:youtube"

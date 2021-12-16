@@ -42,6 +42,7 @@
                   <div class="row w-100 button-colab">
                     <?php if(get_field("valor-plano-mensal")):?>
                       <a class="text-decoration-none" href="<?php the_field("link-plano-mensal"); ?>" target="_blank" rel="noopener noreferrer"
+                        data-ga
                         data-ga-category="lp:apoie"
                         data-ga-action="click"
                         data-ga-label="tabela:<?php echo $post->post_name; ?>:mensal"
@@ -54,6 +55,7 @@
                     <?php if(get_field("valor-plano-anual")):?>
                       <div class="row w-100 button-colab">
                         <a class="text-decoration-none" href="<?php the_field("link-plano-anual");?>" target="_blank" rel="noopener noreferrer"
+                          data-ga
                           data-ga-category="lp:apoie"
                           data-ga-action="click"
                           data-ga-label="tabela:<?php echo $post->post_name; ?>:anual"
@@ -73,6 +75,7 @@
           </div>
         </div>
         <a class="btn" target="_blank" href="<?php the_field("link-apoie-nos-somos")?>"
+          data-ga
           data-ga-category="lp:apoie"
           data-ga-action="click"
           data-ga-label="rodape:apoie-agora"
@@ -288,6 +291,7 @@
           <a
             target="_blank"
             href="<?php the_field("link-junte-se")?>"
+            data-ga
             data-ga-category="lp:apoie"
             data-ga-action="click"
             data-ga-label="rodape:apoie-agora"
